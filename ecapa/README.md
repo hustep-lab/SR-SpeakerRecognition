@@ -6,6 +6,7 @@ The are two types of loss function implemented: the self-implemented Large Margi
 
 
 ## Training and Evaluation
+- Prepare the MUSAN and RIR augmentation dataset as in the original GitHub of [VoxCeleb-Trainer](https://github.com/clovaai/voxceleb_trainer).
 - Prepare a text file `train_list` for the training corpus, containing the lists of path to audios of speakers. The format is as follows: `speaker_id \t path`, where `path` is the ABOSULTE path of the audio.
 - Prepare the `eval_list`, which is the development corpus. Each line contains `label \t enrol_path \t test_path`.
 - We also have `eval_path` containing the absolute path to the directory containing the test audios. The path in `eval_list` can be relative w.r.t the the `eval_path` directory, otherwise you can leave them as absolute path and no need to care about `eval_path`.
@@ -21,8 +22,8 @@ python trainECAPAModel.py --save_path ./exp \
 --train_path \
 --eval_list \
 --eval_path \
---musan_path /home3/thanhpv/speaker_verification/slt/ECAPA-TDNN/voxceleb_trainer/data_augment/musan_split \
---rir_path /home3/thanhpv/speaker_verification/slt/ECAPA-TDNN/voxceleb_trainer/data_augment/RIRS_NOISES/simulated_rirs \
+--musan_path  \
+--rir_path \
 --batch_size 100 \
 --initial_model \
 --n_class 4  
@@ -38,8 +39,8 @@ python trainECAPAModel.py --save_path ./exp_emo \
 --train_path \
 --eval_list \
 --eval_path \
---musan_path /home3/thanhpv/speaker_verification/slt/ECAPA-TDNN/voxceleb_trainer/data_augment/musan_split \
---rir_path /home3/thanhpv/speaker_verification/slt/ECAPA-TDNN/voxceleb_trainer/data_augment/RIRS_NOISES/simulated_rirs \
+--musan_path \
+--rir_path \
 --batch_size 100 \
 --initial_model \
 --n_class 4 \
